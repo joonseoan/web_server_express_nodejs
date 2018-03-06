@@ -7,6 +7,14 @@ const hbs = require('hbs');
 // I forgot "fs"
 const fs = require('fs');
 
+// Since Heroku installed, we need to change environment
+//      the server is working on.
+// "process" is an object 
+//      that contains all of environment variable
+//      as key value pairs.
+const port = process.env.PORT || 3000;
+
+
 let app = express();
 
 hbs.registerPartials(`${__dirname}/views/partials`);
@@ -158,8 +166,23 @@ app.get('/bad', (req, res) => {
     });
 });
 
-app.listen(3000, () => {
 
-    console.log('The server is up in 3000, now!!!');
+// since injecting "heroku" and setup "process.env.Port"
+//      we need to change the port configuration in the code.
+app.listen(port, () => {
+
+    console.log(`The server is up in ${ port } , now!!!`);
 
 });
+
+/**
+ * Since we install heroku,
+ *  1) change the port configuration code
+ *  
+ *  2) add "start" : "node server_3.js" to "package.json" 
+ *      right underneath "scripts.test" property.
+ *  
+ *  3) the, heroku will identify the "start" file in the app.
+ * 
+ *  4) Then, finally we can use "npm start" in our app.
+ */
