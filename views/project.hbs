@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Project Page</title>
+    </head>
+    <body>
+        <!-- the name of file.--> 
+        {{> header }}
+        
+       <!-- Double curly bracket as shown below is used
+        for enbracing property sent from js file. -->
+        
+        <h1>{{ title }}</h1>
+
+        <!-- "makeUpperCase" is a function 
+            to make characters uppercase 
+            defined in js --> 
+        <p>{{ makeUpperCase projectMsg }}</p>
+
+        <!-- to inject "./partials/footer.hbs" -->
+        <!-- the name of file.--> 
+        {{> footer }}
+    </body>
+
+</html>

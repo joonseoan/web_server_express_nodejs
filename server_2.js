@@ -36,6 +36,7 @@ hbs.registerHelper('currentYear', () => {
 hbs.registerHelper('makeUpperCase', (text) => {
 
     return text.toUpperCase();
+    
 });
 
 //--------------------------------------------------

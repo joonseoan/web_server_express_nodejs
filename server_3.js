@@ -112,7 +112,6 @@ app.get('/', (req, res) => {
 
     res.render('root.hbs', {
 
-
         headerMsg : 'I am learning "express"',
         title: 'Main Page',        
         welcomeMsg: 'Welcome to express world!'
@@ -137,7 +136,6 @@ app.get('/', (req, res) => {
 
     res.render('root.hbs', {
 
-
         headerMsg : 'I am learning "express"',
         title: 'Main Page',        
         welcomeMsg: 'Welcome to express world!'
@@ -156,6 +154,18 @@ app.get('/about', (req, res) => {
     });
 
 });
+
+app.get('/project', (req, res) => {
+
+    res.render('project.hbs', {
+
+        projectMsg : 'I will start express project soon',
+        title : 'Project Page'
+ 
+    });
+
+});
+
 
 app.get('/bad', (req, res) => {
 
